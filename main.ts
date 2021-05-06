@@ -17,6 +17,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSpr
 })
 let mySprite: Sprite = null
 let dotSprite: Sprite = null
+tiles.setTilemap(tilemap`level1`)
 let dotsVertical = 15
 let dotsHorizontal = 5
 info.setScore(0)
@@ -44,5 +45,6 @@ mySprite = sprites.create(img`
     . . 5 5 5 5 5 5 5 5 5 . . 
     . . . 5 5 5 5 5 5 5 . . . 
     `, SpriteKind.Player)
+scene.cameraFollowSprite(mySprite)
 controller.moveSprite(mySprite)
-mySprite.setStayInScreen(true)
+mySprite.setStayInScreen(false)
